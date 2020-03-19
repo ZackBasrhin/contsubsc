@@ -1,0 +1,10 @@
+.header
+  .home-box
+    = image_tag 'LOGO.png', class: "LOGO", alt: "LOGO", size: '40x40'
+    .app-name
+    固定費管理アプリ
+  = link_to "収支設定", edit_income_path(@income), class: 'edit-balance link-btn'
+  = link_to "マイページ", income_path(@income), class: 'mypage link-btn'
+  = link_to "比較一覧", "#", class: 'balance-list link-btn'
+  = link_to "Username: #{current_user.name}", edit_user_path(current_user), class: 'edit-user link-btn'
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'log-out link-btn'

@@ -1,0 +1,14 @@
+@import "reset";
+@import "incomes/show";
+@import "header";
+@import "modules/user";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,0 +1,27 @@
+.contents {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  .left-box {
+    width: 25%;
+    .net-income {
+      height: 30%;
+    }
+    .total-cost {
+      height: 30%;
+    }
+    .real-income {
+      height: 40%;
+    }
+  }
+  .center-box {
+    width: 35%;
+  }
+  .right-box {
+    width: 40%;
+    text-align: center;
+    #balance-chart {
+      display: inline-block;
+    }
+  }
+}

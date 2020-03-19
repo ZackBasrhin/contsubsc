@@ -1,0 +1,35 @@
+.header {
+  height: 58px;
+  border-bottom: 2px solid slategray;
+  width: 100%;
+  background-color: tomato;
+  display: flex;
+  .home-box {
+    height: 100%;
+    width: 200px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    .app-name {
+      margin-left: 10px;
+    }
+  }
+  .link-btn {
+    font-size: small;
+    text-align: center;
+    line-height: 55px;
+    padding: 0px 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+  }
+  .link-btn:hover {
+    background-color: orangered;
+  }
+  .link-btn:active {
+    transform: translateY(2px);
+  }
+  .edit-user {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,54 @@
+.wrapper
+  =render 'header'
+  .contents
+    .left-box
+      .net-income
+        .net-income__title
+          手取り月収
+        .net-income__amount
+          = "#{@revenue.to_s(:delimited)}円"
+      .total-cost
+        .total-cost__title
+          固定費総額
+        .total-cost__amount
+          = "#{@total_cost.to_s(:delimited)}円"
+      .real-income
+        .real-income__title
+          実収入
+        .real-income__amount
+          = "#{@real_income.to_s(:delimited)}円"
+
+    .center-box
+    .right-box
+      - data = @fixed_costs.pluck(:name, :amount).to_h
+      - data["実収入"] = @real_income
+      - p data
+      = pie_chart data, id: "balance-chart"
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  -# #{@revenue.to_s(:delimited)}円 
+  -# - data = @fixed_costs.pluck(:name, :amount).to_h
+  -# - profit = @revenue - @fixed_costs.pluck(:amount).sum
+  -# - p data["実収入"] = profit
+  -# - p data
+  -# = pie_chart data, id: "balance-chart"
