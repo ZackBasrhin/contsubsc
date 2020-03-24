@@ -1,7 +1,8 @@
 Chartkick.options = {
-  width:"300px",
-  height: "300px",
+  width: "330px",
+  height: "330px",
   thousands: ",",
   suffix: "円",
-  messages: {empty: "データがありません"}
+  messages: {empty: "データがありません"},
+  legend: "bottom"
 }

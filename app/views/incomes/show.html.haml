@@ -5,25 +5,46 @@
       .net-income
         .net-income__title
           手取り月収
-        .net-income__amount
-          = "#{@revenue.to_s(:delimited)}円"
+        %span.net-income__amount
+          #{@income_amount.to_s(:delimited)}円
       .total-cost
         .total-cost__title
           固定費総額
-        .total-cost__amount
-          = "#{@total_cost.to_s(:delimited)}円"
+        %apan.total-cost__amount
+          △#{@costs_amount.to_s(:delimited)}円
       .real-income
         .real-income__title
           実収入
-        .real-income__amount
-          = "#{@real_income.to_s(:delimited)}円"
-
+        %span.real-income__amount
+          #{@real_income.to_s(:delimited)}円
     .center-box
+      .line-box
+        .line-box__top
+        .line_box__bottom
+      .cost-list
+        .cost-list__title
+          固定費内訳
+        .cost-list__breakdown
+          - @costs_hash.each do |name, amount|
+            .cost-list__breakdown__name
+              #{name}
+            .cost-list__breakdown__amount
+              #{amount.to_s(:delimited)}円
+          
     .right-box
-      - data = @fixed_costs.pluck(:name, :amount).to_h
-      - data["実収入"] = @real_income
-      - p data
-      = pie_chart data, id: "balance-chart"
+      .balance-chart
+        .balance-chart__title
+          現在の収支状況
+        .balance-chart__content
+          - @balance_data = {"固定費": @costs_amount, "実収入": @real_income}
+          = pie_chart @balance_data, id: "balance-chart"
+        .balance-chart__caption
+          収入に対する固定費の割合
+        .balance-chart__percentage
+          = "#{@costs_amount*100/@income_amount}%"
+        =link_to "固定費を見直す", "#", class: "edit-balance"
+
+
       
 
 
