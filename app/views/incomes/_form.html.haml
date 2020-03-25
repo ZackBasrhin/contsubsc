@@ -1,7 +1,7 @@
-= form_with(model: income) do |f|
+= form_with(model: income, local: true) do |f|
   .income-form__field
     .income-form__field--left
-      = f.text_field :amount, class:'income-form__input'
+      = f.number_field :amount, placeholder: :手取り月収, class:'income-form__input'
     .income-form__field--right 円
   .fixed-costs__checkboxes
     = f.collection_check_boxes :fixed_cost_ids, @fixed_costs, :id, :view_name_and_amount, include_hidden: false do |cost|
@@ -9,7 +9,3 @@
         = cost.check_box
         = cost.label { cost.text }
     = f.submit "設定完了", class: 'set-btn'
-
-
-
-  

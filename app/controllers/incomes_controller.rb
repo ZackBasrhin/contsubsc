@@ -1,5 +1,5 @@
 class IncomesController < ApplicationController
-  before_action :set_income, except: :top
+  before_action :set_income, except: [:top, :new, :create]
   def top
     @income = current_user.income
   end
@@ -13,13 +13,16 @@ class IncomesController < ApplicationController
     @fixed_costs = FixedCost.all
   end
 
-  def create
-    @income = Income.new(income_params)
-    if @income.save
-      redirect_to root_path, notice: 'グループを作成しました'
+  def edit
+    @fixed_costs = FixedCost.all
+  end
+
+  def update
+    if @income.update(income_params)
+      redirect_to root_path, notice: '月収を更新しました'
     else
-      render :new
-    end
+      render :edit
+    end 
   end
   
   def show
@@ -30,12 +33,14 @@ class IncomesController < ApplicationController
     @costs_hash = @fixed_costs.pluck(:name, :amount).sort_by { |k, v| -v }.to_h
   end
 
-  def edit
-    @income = Income.find(params[:id])
-    @fixed_costs = FixedCost.all
+  def create
   end
 
   private
+
+  def income_params
+    params.require(:income).permit(:amount, fixed_cost_ids:[])
+  end
 
   def set_income
     @income = Income.find(params[:id])
