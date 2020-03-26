@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: contsubsc_production
-  username: contsubsc
-  password: <%= ENV['CONTSUBSC_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
