@@ -1,0 +1,11 @@
+.wrapper
+  = render '/incomes/header'
+  固定費追加画面
+  = form_with(model: @fixed_cost, local: true) do |f|
+    .fixed-cost_form-box
+      .fixed-cost_form-box_name
+        = f.text_field :name, placeholder: :サービス名, class:'fixed-cost__name'
+      .fixed-cost_form-box_amount
+        = f.number_field :amount, placeholder: :金額,  class:'fixed-cost__amount'
+        = "円"
+    = f.submit "追加", class: 'add-btn'
