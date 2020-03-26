@@ -14,7 +14,7 @@ class IncomesController < ApplicationController
   end
 
   def edit
-    @fixed_costs = FixedCost.all
+    @fixed_costs = FixedCost.order("amount DESC").all
   end
 
   def update
