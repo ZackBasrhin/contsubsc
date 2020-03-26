@@ -1,6 +1,4 @@
 class FixedCostsController < ApplicationController
-  before_action :set_income, except: [:edit]
-
 
   def new
     @fixed_cost = FixedCost.new
@@ -23,7 +21,4 @@ class FixedCostsController < ApplicationController
     params.require(:fixed_cost).permit(:name, :amount)
   end
 
-  def set_income
-    @income = Income.find(current_user.id)
-  end
 end
