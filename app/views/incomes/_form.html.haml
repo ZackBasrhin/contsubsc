@@ -8,4 +8,5 @@
       %p.fixed-costs__checkboxes__item
         = cost.check_box
         = cost.label { cost.text }
-    = f.submit "設定完了", class: 'set-btn'
+  = f.submit "設定完了", class: 'set-btn'
+  =link_to "固定費項目を追加する", new_fixed_cost_path, class: "fixed-cost__edit"

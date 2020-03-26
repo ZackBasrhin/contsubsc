@@ -1,12 +1,4 @@
 class UsersController < ApplicationController
-  
-  def index
-  end
-  
-  def show
-    @income = Income.find(current_user.id).amount
-  end
-
 
   def edit
     @income = Income.find(current_user.id)
