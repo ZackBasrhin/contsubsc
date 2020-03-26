@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  def edit
-    @income = Income.find(current_user.id)
-  end
+  # def edit
+  #   @income = Income.find(current_user.id)
+  # end
 
   def update
     if current_user.update(user_params)

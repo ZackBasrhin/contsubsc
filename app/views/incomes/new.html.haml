@@ -1,3 +1,7 @@
 .wrapper
-  = render 'header'
+  .header
+    .home-box
+      = image_tag 'LOGO.png', class: "LOGO", alt: "LOGO", size: '40x40'
+      .app-name
+      固定費管理アプリ
   = render partial: 'form', locals: {income: @income}
