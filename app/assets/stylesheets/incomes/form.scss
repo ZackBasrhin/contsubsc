@@ -1,0 +1,90 @@
+.form-contents {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  .edit-form {
+    width: 60%;
+    display: flex;
+    .form-left {
+      width: 40%;
+      border-right: 1px solid gray;
+      &__income {
+        height: 35%;
+        position: relative;
+        &__title {
+          padding: 50px 0 0 5px;
+          font-size: small;
+        }
+        &__input {
+          font-size: larger;
+          text-align: right;
+          position: absolute;
+          right: 10px;
+          bottom: 100px;
+          .input-income {
+            width: 130px;
+          }
+        }
+      }
+      &__fixed-cost {
+        height: 35%;
+        position: relative;
+        &__title {
+          font-size: large;
+          padding: 50px 0 0 10px;
+        }
+        &__amount {
+          font-size: x-large;
+          text-align: right;
+          width: 150px;
+          border-bottom: 2px solid black;
+          position: absolute;
+          right: 10px;
+          bottom: 40px;
+        }
+      }
+      .set-btn {
+        display: inline-block;
+        font-weight: bold;
+        height: 50px;
+        padding: 0 30px;
+        line-height: 50px;
+        letter-spacing: 1px;
+        text-align: center;
+        border-left: solid 6px #ff7c5c;
+        margin-top: 20px;
+        color: black;
+        background-color: yellow;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.29);
+        text-decoration: none;      
+      }
+    }
+    .form-center {
+      width: 60%;
+      border-left: solid wheat;
+      border-right: solid gray;
+      border-bottom: solid gray;
+      border-width: 0 1px 1px 40px;
+      &__title {
+        background-color: palegoldenrod;
+        height: 66px;
+        text-align: center;
+        font-size: x-large;
+        padding: 15px;
+        border-bottom: 3px solid goldenrod;
+      }
+      .fixed-costs__checkboxes__item {
+        background-color:ivory;
+        padding: 10px;
+        height: calc(100% - 66px);
+        overflow: auto;
+        .checkboxes-item {
+          margin: 3px;
+        }
+      }
+    }
+  }
+  .add-form {
+    width: 40%;
+  }
+}

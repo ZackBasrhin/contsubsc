@@ -30,7 +30,6 @@
               #{name}
             .cost-list__breakdown__amount
               #{amount.to_s(:delimited)}円
-          
     .right-box
       .balance-chart
         .balance-chart__title
@@ -41,9 +40,14 @@
         .balance-chart__caption
           収入に対する固定費の割合
         .balance-chart__percentage
-          = "#{@costs_amount*100/@income_amount}%"
-
-      
+          = "#{@percentage}%"
+        .balance-chart__illust
+          - if @percentage > 65
+            = image_tag 'pose_sugoi_okoru_man.png', alt: '大炎上',class: 'irasutoya'
+          - elsif @percentage > 45
+            = image_tag 'omoi_man.png', alt: '負担', height: '300px', width: '250px'
+          - else
+            = image_tag 'pose_genki03_man.png', alt: '良好', height: '300px', width: '250px'
 
 
 

@@ -96,9 +96,18 @@
       text-align: center;
       &__title {
         height: 40px;
+        line-height: 40px;
+      }
+      &__percentage {
+        font-size: larger;
+        font-weight: bold;
       }
       #balance-chart {
         display: inline-block;
+      }
+      .irasutoya {
+        height: 300px;
+        width: 250px;
       }
     }
   }

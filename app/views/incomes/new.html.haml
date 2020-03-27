@@ -3,5 +3,7 @@
     .home-box
       = image_tag 'LOGO.png', class: "LOGO", alt: "LOGO", size: '40x40'
       .app-name
-      固定費管理アプリ
+        固定費管理アプリ
+    = link_to "Username: #{current_user.name}", edit_user_path(current_user), class: 'edit-user link-btn'
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'log-out link-btn'
   = render partial: 'form', locals: {income: @income}

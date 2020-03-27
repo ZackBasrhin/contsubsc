@@ -1,12 +1,33 @@
-= form_with(model: income, local: true) do |f|
-  .income-form__field
-    .income-form__field--left
-      = f.number_field :amount, placeholder: :手取り月収, class:'income-form__input'
-    .income-form__field--right 円
-  .fixed-costs__checkboxes
-    = f.collection_check_boxes :fixed_cost_ids, @fixed_costs, :id, :view_name_and_amount, include_hidden: false do |cost|
-      %p.fixed-costs__checkboxes__item
-        = cost.check_box
-        = cost.label { cost.text }
-  = f.submit "設定完了", class: 'set-btn'
-= link_to "固定費項目を追加する", new_fixed_cost_path, class: "fixed-cost__edit"
+.form-contents
+  = form_with(class: "edit-form", model: income, local: true) do |f|
+    .form-left
+      .form-left__income
+        .form-left__income__title
+          月収を手取り金額で入力してください
+        .form-left__income__input
+          = f.number_field :amount, placeholder: :手取り月収, style:'text-align: right', class: 'input-income'
+          = "円"
+      .form-left__fixed-cost
+        .form-left__fixed-cost__title
+          固定費総額
+        .form-left__fixed-cost__amount
+          △#{@income.fixed_costs.pluck(:amount).sum.to_s(:delimited)}円
+      = f.submit "設定完了", class: 'set-btn'
+    .form-center
+      .form-center__title
+        固定費項目選択
+      .fixed-costs__checkboxes__item
+        = f.collection_check_boxes :fixed_cost_ids, @fixed_costs, :id, :view_name_and_amount, include_hidden: false do |cost|
+          %p.checkboxes-item
+            = cost.check_box
+            = cost.label { cost.text }
+  = form_with(class: "add-form", model: @fixed_cost, local: true) do |f|
+    .fixed-cost__form-box
+      .fixed-cost__form-box__title
+        固定費項目にない場合はこちらで追加してください
+      .fixed-cost__form-box__name
+        = f.text_field :name, placeholder: :サービス名, class:'fixed-cost__name'
+      .fixed-cost__form-box__amount
+        = f.number_field :amount, placeholder: :金額,  class:'fixed-cost__amount'
+        = "円"
+    = f.submit "追加", class: 'add-btn'
