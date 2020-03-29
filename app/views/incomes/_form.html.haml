@@ -28,6 +28,7 @@
       .fixed-cost__form-box__name
         = f.text_field :name, placeholder: :サービス名, class:'fixed-cost__name'
       .fixed-cost__form-box__amount
-        = f.number_field :amount, placeholder: :金額,  class:'fixed-cost__amount'
+        = f.number_field :amount, placeholder: :金額,  class:'fixed-cost__amount', style:'text-align: right'
         = "円"
-    = f.submit "追加", class: 'add-btn'
+      = f.submit "追加", class: 'add-btn'
+    = image_tag 'character_manekineko.png', alt: '招き猫',class: 'irasutoya manekineko'
