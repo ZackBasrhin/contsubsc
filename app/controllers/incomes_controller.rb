@@ -18,7 +18,7 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(income_params)
     if @income.save
-      redirect_to root_path, notice: '収支の設定を登録しました'
+      redirect_to income_path(current_user.income), notice: '収支の設定を登録しました'
     else
       render :edit
     end 
@@ -31,7 +31,7 @@ class IncomesController < ApplicationController
 
   def update
     if @income.update(income_params)
-      redirect_to root_path, notice: '収支の設定を更新しました'
+      redirect_to income_path(current_user.income), notice: '収支の設定を更新しました'
     else
       render :edit
     end 
