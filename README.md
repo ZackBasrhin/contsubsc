@@ -1,24 +1,39 @@
-# README
+## incomesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|amount|integer|null: false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :income_fixed_costs
+- has_many :fixed_costs, through: :income_fixed_costs
+- belongs_to :user
 
-Things you may want to cover:
+## fixed_costsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|amount|string|null: false|
+|name  |text  |null: false|
 
-* Ruby version
+### Association
+- has_many :income_fixed_costs
+- has_many :incomes, through: :income_fixed_costs
 
-* System dependencies
+## income_fixed_costsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|amount|string|null: false|
+|name  |text  |null: false|
 
-* Configuration
+### Association
+- has_many :income_fixed_costs
+- has_many :incomes, through: :income_fixed_costs
 
-* Database creation
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name  |string|null: false|
+|email |string  |null: false|
+|encrypted_password|string|null: false|
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- has_one :income
