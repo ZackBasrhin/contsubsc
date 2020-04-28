@@ -2,6 +2,13 @@
 
 # 開発環境
 
+* Ruby
+* Ruby on Rails
+* MySQL
+* Visual Studio Code
+* Github
+* heroku
+
 # DB設計
 
 ## incomesテーブル
