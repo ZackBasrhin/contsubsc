@@ -1,6 +1,6 @@
 # 固定費管理アプリContsubsc
 
-
+![toppage](app/assets/images/toppage.png)
 
 # 開発環境
 
