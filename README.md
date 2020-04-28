@@ -1,3 +1,9 @@
+#固定費管理アプリContsubsc
+
+#開発環境
+
+# DB設計　
+
 ## incomesテーブル
 |Column|Type|Options|
 |------|----|-------|
