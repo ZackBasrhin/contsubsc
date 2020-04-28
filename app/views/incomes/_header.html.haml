@@ -8,6 +8,6 @@
   - else
     = link_to "収支登録", new_income_path, class: 'create-balance link-btn'
 
-  = link_to "比較一覧", "#", class: 'balance-list link-btn'
+  -# = link_to "比較一覧", "#", class: 'balance-list link-btn'
   = link_to "Username: #{current_user.name}", edit_user_path(current_user), class: 'edit-user link-btn'
   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'log-out link-btn'
