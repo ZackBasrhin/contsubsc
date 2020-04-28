@@ -1,6 +1,5 @@
 class FixedCost < ApplicationRecord
-  validates :amount, presence: true
-
+  
   has_many :income_fixed_costs
   has_many :incomes, through: :income_fixed_costs
   
