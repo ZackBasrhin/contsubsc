@@ -13,7 +13,6 @@ class FixedCostsController < ApplicationController
     end
   end
 
-
   private
 
   def fixed_cost_params
