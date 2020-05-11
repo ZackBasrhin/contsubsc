@@ -1,6 +1,13 @@
 # 固定費管理アプリContsubsc
 
+## トップページ
 ![toppage](app/assets/images/toppage.png)
+
+## 収支設定ページ
+![editpage](app/assets/images/editpage.png)
+
+## 収支詳細ページ
+![showpage](app/assets/images/showpage.png)
 
 # 開発環境
 
