@@ -8,6 +8,14 @@
 
 ### 収支詳細ページ
 ![showpage](app/assets/images/showpage.png)
+収入に対する固定費の割合によって円グラフ下の画像が変わります。
+
+## 本番環境URL
+* https://contsubsc.herokuapp.com/
+
+## テストアカウント
+* email：test@test
+* password：qqqqqqqq
 
 # 制作背景
 
