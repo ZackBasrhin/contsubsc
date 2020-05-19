@@ -5,6 +5,7 @@
 
 ### 収支設定ページ
 ![editpage](app/assets/images/editpage.png)
+固定費の項目は名前で昇順に並んでいます
 
 ### 収支詳細ページ
 ![showpage](app/assets/images/showpage.png)
